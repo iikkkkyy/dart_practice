@@ -13,16 +13,16 @@ void main() {
   for(int i = 1; i < 101; i++){
     if (i % 30 == 0) {
       ahhcount += 1;
-      print('player${((i-1)%4) + 1} : ahh');
+      print('player${(i-1)%4 + 1} : ahh');
     } else if (i % 10 == 0) {
       roolcount += 1;
-      print('player${((i-1)%4) + 1} : rool');
+      print('player${(i-1)%4 + 1} : rool');
     } else if (i% 3 == 0){
       clapcount += 1;
-      numbers[((i-1)%4)] = numbers[(i-1)%4] + 1;
-      print('player${((i-1)%4) + 1} : clap');
+      numbers[(i-1)%4] = numbers[(i-1)%4] + 1;
+      print('player${(i-1)%4 + 1} : clap');
     } else{
-      print('player${((i-1)%4) + 1} : $i');
+      print('player${(i-1)%4 + 1} : $i');
     }
   }
 
