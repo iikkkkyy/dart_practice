@@ -37,5 +37,6 @@ void main(){
     String? c = stdin.readLineSync();
     blackwhite?.add(c!);
   }
+  print(blackwhite!);
   bwGame(blackwhite!);
 }
