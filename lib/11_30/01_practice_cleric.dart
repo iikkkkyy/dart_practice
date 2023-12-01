@@ -11,6 +11,7 @@ class Cleric {
 
   void selfAid() {
     if (MP >= 5) {
+      MP -= 5;
       HP = MaxHP;
     }
   }
