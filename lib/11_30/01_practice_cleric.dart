@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class Cleric{
+class Cleric {
   final String name;
   int HP = 50;
   int MP = 10;
@@ -9,23 +9,23 @@ class Cleric{
 
   Cleric(this.name);
 
-  void selfAid(){
-    if(MP >= 5){
+  void selfAid() {
+    if (MP >= 5) {
       HP = MaxHP;
     }
   }
 
-  int pray(int second){
+  int pray(int second) {
     int plusMP = 0;
     int tmpMP = 0;
     plusMP = second + Random().nextInt(3);
     MP += plusMP;
     tmpMP = MP;
 
-    if(MP > MaxMP){
+    if (MP > MaxMP) {
       MP = MaxMP;
-      return (plusMP -(tmpMP - MaxMP));
-    }else{
+      return (plusMP - (tmpMP - MaxMP));
+    } else {
       return plusMP;
     }
   }
