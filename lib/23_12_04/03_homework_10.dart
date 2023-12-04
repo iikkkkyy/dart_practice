@@ -1,8 +1,8 @@
 // 연습문제 10-1
 
 class Wand {
-  final String? _name;
-  final double _power;
+  String? _name;
+  double _power;
 
   Wand({
     required String? name,
@@ -15,11 +15,11 @@ class Wand {
   double get power => _power;
 
   set name(String? name) {
-    validateName(name);
+    _name = validateName(name);
   }
 
   set power(double power) {
-    validatePower(power);
+    _power = validatePower(power);
   }
 
   static String validateName(String? name) {
@@ -44,9 +44,9 @@ class Wand {
 // 5. HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다. (에러 아님)
 
 class Wizard {
-  final String? _name;
-  final int _hp;
-  final int _mp;
+  String? _name;
+  int _hp;
+  int _mp;
   Wand wand;
 
   Wizard({
@@ -58,6 +58,10 @@ class Wizard {
         _hp = validate_hp(hp),
         _mp = validate_mp(mp);
 
+  //     : _name = validate_name(name),
+  // _hp = validate_hp(hp),
+  // _mp = validate_mp(mp);
+
   String? get name => _name;
 
   int get hp => _hp;
@@ -65,15 +69,15 @@ class Wizard {
   int get mp => _mp;
 
   set name(String? name) {
-    validate_name(name);
+    _name = validate_name(name);
   }
 
   set hp(int hp) {
-    validate_hp(hp);
+    _hp = validate_hp(hp);
   }
 
   set mp(int mp) {
-    validate_mp(mp);
+    _mp = validate_mp(mp);
   }
 
   static String validate_name(String? name) {
@@ -100,8 +104,8 @@ class Wizard {
 }
 
 void main() {
-  final wizard =
-      Wizard(name: 'aaa', hp: -2, mp: 10, wand: Wand(name: 'bbb', power: 0.5));
-  // wizard.name = 'a';
-  print(wizard.hp);
+  final wizard = Wizard(
+      name: 'aaaa', hp: 2, mp: 10, wand: Wand(name: 'aaaa', power: 0.5));
+  wizard.wand.name = 'aa';
+  print(wizard.name);
 }
