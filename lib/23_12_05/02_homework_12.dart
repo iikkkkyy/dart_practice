@@ -31,7 +31,6 @@ class Book extends TangibleAsset {
   set weight(double weight) {
     _weight = weight;
   }
-
 }
 
 class Computer extends TangibleAsset {
@@ -78,8 +77,8 @@ abstract class Asset {
 // double get weight는 필드로 인식을 안한다..!
 abstract interface class Thing {
   double get weight;
-  set weight(double weight);
 
+  set weight(double weight);
 }
 
 void main() {
