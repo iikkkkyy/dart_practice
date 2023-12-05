@@ -7,29 +7,52 @@
 // 무형자산에는, 예를들어 특허권(Patent) 등이 있다.
 // 무형자산도 유형자산도 자산(Asset)의 일종이다.
 // 이것을 전제로 다음의 상속도의 가, 나, 다 부분의 클래스명을 생각 해 보시오. => 가 : Asset, 나 : IntangibleAsset, 다 : Patent
+
+// 연습문제 12-3
+// 자산인지 아닌지 따지지 말고, 형태가 있는 것 (Thing) 이면, 무게가 있다
+// 그래서, double 형으로 무게(weight)를 얻을 수 있도록 getter/setter를 가지는 인터페이스 Thing 을 만드시오
+
 class Book extends TangibleAsset {
   String isbn;
+  double _weight;
 
   Book({
     required this.isbn,
     required super.name,
     required super.price,
     required super.color,
-  });
+    required double weight,
+  }) : _weight = weight;
+
+  double get weight => _weight;
+
+  @override
+  set weight(double weight) {
+    _weight = weight;
+  }
 }
 
 class Computer extends TangibleAsset {
   String makerName;
+  double _weight;
 
   Computer({
     required this.makerName,
     required super.name,
     required super.price,
     required super.color,
-  });
+    required double weight,
+  }) : _weight = weight;
+
+  double get weight => _weight;
+
+  @override
+  set weight(double weight) {
+    _weight = weight;
+  }
 }
 
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing {
   String color;
 
   TangibleAsset({
@@ -49,9 +72,35 @@ abstract class Asset {
   });
 }
 
+// set은 메소드로써 구현이 필요함 , set 은 get을 보통 필요로함??
+abstract interface class Thing {
+  set weight(double weight);
+}
+
 void main() {
-  Book book =
-      Book(isbn: '11-56-11-24', name: 'karl', price: 20000, color: 'red');
-  Computer computer =
-      Computer(makerName: 'apple', name: 'karl', price: 2000000, color: 'spaceGray');
+  //
+  // Book book = Book(
+  //     isbn: '11-56-11-24',
+  //     name: 'karl',
+  //     price: 20000,
+  //     color: 'red',
+  //     weight: 10.0);
+  // Computer computer = Computer(
+  //     makerName: 'apple',
+  //     name: 'karl',
+  //     price: 2000000,
+  //     color: 'spaceGray',
+  //     weight: 10.0);
+  Book book = Book(
+      isbn: '11011-11',
+      name: 'karl',
+      price: 20000,
+      color: 'red',
+      weight: 100.0);
+  Computer computer = Computer(
+      makerName: 'apple',
+      name: 'karl',
+      price: 2000000,
+      color: 'spaceGray',
+      weight: 7.4);
 }
