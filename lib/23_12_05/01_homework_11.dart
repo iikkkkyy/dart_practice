@@ -7,3 +7,8 @@
 // Food     Susi => true
 // SuperMan Man => false
 
+// 연습문제 11-2
+// 다음 클래스에 대해 “부모 클래스" 와 “자식 클래스" 를 1개씩 생각 해 보시오
+// (1) iPhone => Phone => Device
+// (2) Ev6 => Car => Vehicle
+// (3) Korean Dictionary => Dictionary => Document
