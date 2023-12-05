@@ -52,6 +52,6 @@ abstract class Asset {
 void main() {
   Book book =
       Book(isbn: '11-56-11-24', name: 'karl', price: 20000, color: 'red');
-  Computer computer = Computer(
-      makerName: 'apple', name: 'karl', price: 2000000, color: 'spaceGray');
+  Computer computer =
+      Computer(makerName: 'apple', name: 'karl', price: 2000000, color: 'spaceGray');
 }
