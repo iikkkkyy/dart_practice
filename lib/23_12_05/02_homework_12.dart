@@ -24,12 +24,14 @@ class Book extends TangibleAsset {
     required double weight,
   }) : _weight = weight;
 
+  @override
   double get weight => _weight;
 
   @override
   set weight(double weight) {
     _weight = weight;
   }
+
 }
 
 class Computer extends TangibleAsset {
@@ -44,6 +46,7 @@ class Computer extends TangibleAsset {
     required double weight,
   }) : _weight = weight;
 
+  @override
   double get weight => _weight;
 
   @override
@@ -74,7 +77,9 @@ abstract class Asset {
 
 // set은 메소드로써 구현이 필요함 , set 은 get을 보통 필요로함??
 abstract interface class Thing {
+  double get weight;
   set weight(double weight);
+
 }
 
 void main() {
