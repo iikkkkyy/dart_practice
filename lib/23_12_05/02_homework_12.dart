@@ -75,7 +75,7 @@ abstract class Asset {
   });
 }
 
-// set은 메소드로써 구현이 필요함 , set 은 get을 보통 필요로함??
+// double get weight는 필드로 인식을 안한다..!
 abstract interface class Thing {
   double get weight;
   set weight(double weight);
