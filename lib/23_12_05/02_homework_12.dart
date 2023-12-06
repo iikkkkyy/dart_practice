@@ -103,6 +103,7 @@ abstract class Asset {
 // double get weight는 필드로 인식을 안한다..!
 abstract interface class Thing {
   double get weight;
+
   set weight(double weight);
 }
 
@@ -121,15 +122,17 @@ void main() {
   //     color: 'spaceGray',
   //     weight: 10.0);
   Book book = Book(
-      isbn: '11011-11',
-      name: 'karl',
-      price: 20000,
-      color: 'red',
-      weight: 100.0);
+    isbn: '11011-11',
+    name: 'karl',
+    price: 20000,
+    color: 'red',
+    weight: 100.0,
+  );
   Computer computer = Computer(
-      makerName: 'apple',
-      name: 'karl',
-      price: 2000000,
-      color: 'spaceGray',
-      weight: 7.4);
+    makerName: 'apple',
+    name: 'karl',
+    price: 2000000,
+    color: 'spaceGray',
+    weight: 7.4,
+  );
 }
