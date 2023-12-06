@@ -64,6 +64,16 @@ abstract class TangibleAsset extends Asset implements Thing {
   });
 }
 
+// class TangibleAsset extends Asset {
+//   String color;
+//
+//   TangibleAsset({
+//     required this.color,
+//     required super.name,
+//     required super.price,
+//   });
+// }
+
 abstract class Asset {
   String name;
   int price;
@@ -74,10 +84,25 @@ abstract class Asset {
   });
 }
 
+// class AAA implements Thing {
+//   double _weight;
+//
+//   @override
+//   double get weight => _weight;
+//
+//   @override
+//   set weight(double weight) {
+//     _weight = weight;
+//   }
+//
+//   AAA({
+//     required double weight,
+//   }) : _weight = weight;
+// }
+
 // double get weight는 필드로 인식을 안한다..!
 abstract interface class Thing {
   double get weight;
-
   set weight(double weight);
 }
 
