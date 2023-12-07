@@ -25,7 +25,6 @@ class Book {
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
 
-
   @override
   String toString() {
     return 'Book{title: $title, publishDate: $publishDate, comment: $comment}';
@@ -70,13 +69,13 @@ void main() {
   print(mapBooks[b] == mapBooks[c]);
 
 // 2) Book 인스턴스를 담고 있는 컬렉션에 대해 sort() 를 수행하여 출간일이 오래된 순서대로 정렬한다.
-  List<Book> listBooks2 = [f,e,d,c,c,c,c,d,f];
+  List<Book> listBooks2 = [f, e, d, c, c, c, c, d, f];
   // toString 이 나을까 아니면 int.parse가 나을까??
-  listBooks2.sort((a,b) => a.publishDate.toString().compareTo(b.publishDate.toString()));
+  listBooks2.sort(
+      (a, b) => a.publishDate.toString().compareTo(b.publishDate.toString()));
   print(listBooks2);
 
   // 3)deep copy 를 지원한다
   Book dc = c.copyWith();
   print(dc);
-
 }
