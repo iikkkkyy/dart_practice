@@ -44,6 +44,13 @@ class Book {
 }
 
 void main() {
+
+  final date = DateTime.now();
+  final nextday = date.add(Duration(days: 1));
+  final nextnextday = date.add(Duration(days: 2));
+  print(date);
+  print(nextday);
+  print(nextnextday);
   Book a = Book(title: '11', comment: 'aa', publishDate: DateTime.now());
   Book b =
       Book(title: '1', comment: 'abca', publishDate: DateTime(2023, 12, 01));
@@ -68,14 +75,15 @@ void main() {
   Map<Book, Book> mapBooks = {b: b, c: c};
   print(mapBooks[b] == mapBooks[c]);
 
-// 2) Book 인스턴스를 담고 있는 컬렉션에 대해 sort() 를 수행하여 출간일이 오래된 순서대로 정렬한다.
+  // 2) Book 인스턴스를 담고 있는 컬렉션에 대해 sort() 를 수행하여 출간일이 오래된 순서대로 정렬한다.
   List<Book> listBooks2 = [f, e, d, c, c, c, c, d, f];
 
-  listBooks2.sort((a, b) => a.publishDate.compareTo(b.publishDate));
+  listBooks2.sort((a, b) => a.publishDate.millisecondsSinceEpoch.compareTo(b.publishDate.millisecondsSinceEpoch));
   // (a, b) => a.publishDate.toString().compareTo(b.publishDate.toString()));
   print(listBooks2);
 
   // 3)deep copy 를 지원한다
   Book dc = c.copyWith();
-  print(dc);
+  print(dc.hashCode);
+  print(c.hashCode);
 }

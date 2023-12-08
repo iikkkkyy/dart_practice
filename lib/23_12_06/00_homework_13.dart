@@ -57,9 +57,11 @@ abstract class Y implements X {
 }
 
 void main(){
-  // X obj = A();
+  X obj = A();
+
   Y y1 = A();
   Y y2 = B();
+
   // y1.a();
   // y2.a();
   List<Y> a = [];
