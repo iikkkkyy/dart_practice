@@ -10,7 +10,7 @@ void main() {
 // m1max vs m2
 
 
-// m1max(오준석강사님) 6, m2 3.6초
+// m1max(오준석강사님) 5.5초, m2 3.6초
 void test1() {
   var string = '';
 
