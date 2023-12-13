@@ -6,11 +6,11 @@
 import 'dart:io';
 
 void main() {
-  fileEdit('sample.csv', 'sample_copy.csv');
+  fileEdit('samㅇple.csv', 'sample_copy.csv');
 }
 
 Future<void> fileEdit(String src, String dst) async {
-  final word = await readFile(src);
+  final word = await readFile(src).catchError((err) => print('read File error'));
   if (word.contains('한석봉')) {
     await makeFile(dst, word.replaceAll('한석봉', '김석봉'));
   }
