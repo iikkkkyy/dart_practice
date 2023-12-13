@@ -10,7 +10,7 @@ void main() {
 }
 
 Future<void> fileEdit(String src, String dst) async {
-  final word = await readFile(src).catchError((err) => print('read File error'));
+  final word = await readFile(src).catchError((err) => throw Exception('파일이 없습니다!!'));
   if (word.contains('한석봉')) {
     await makeFile(dst, word.replaceAll('한석봉', '김석봉'));
   }
