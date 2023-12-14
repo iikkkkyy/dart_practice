@@ -10,11 +10,11 @@ void main() async {
   // 소요시간 : 0:00:00.184437
   final stopWatch = Stopwatch()..start();
   final imageBytes = await downloadImage('https://alimipro.com/favicon.ico');
-  await saveFile(imageBytes, 'favicon.ico1');
+  await saveFile(imageBytes, 'favicon1.ico');
   final imageBytes2 = await downloadImage('https://alimipro.com/favicon.ico');
-  await saveFile(imageBytes, 'favicon.ico2');
+  await saveFile(imageBytes, 'favicon2.ico');
   final imageBytes3 = await downloadImage('https://alimipro.com/favicon.ico');
-  await saveFile(imageBytes, 'favicon.ico3');
+  await saveFile(imageBytes, 'favicon3.ico');
   print('소요시간 : ${(stopWatch.elapsed.toString())}');
 
   // 소요시간 : 0:00:00.010798
