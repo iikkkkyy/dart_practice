@@ -123,6 +123,11 @@ class Results {
     _voteCount = voteCount;
   }
 
+  @override
+  String toString() {
+    return 'Results{_adult: $_adult, _backdropPath: $_backdropPath, _genreIds: $_genreIds, _id: $_id, _originalLanguage: $_originalLanguage, _originalTitle: $_originalTitle, _overview: $_overview, _popularity: $_popularity, _posterPath: $_posterPath, _releaseDate: $_releaseDate, _title: $_title, _video: $_video, _voteAverage: $_voteAverage, _voteCount: $_voteCount}';
+  }
+
   Results.fromJson(dynamic json) {
     _adult = json['adult'];
     _backdropPath = json['backdrop_path'];

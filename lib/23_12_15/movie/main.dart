@@ -8,9 +8,11 @@ void main() async {
 
   final dto = await api.getMovieInfoResult();
 
+  print(dto.results.toString());
+
   List<Result> results = dto.results
       ?.map((e) => e.toResult())
       .toList() ?? [];
 
-  print(results.toString());
+  print(results);
 }
