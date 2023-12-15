@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 void main() async {
   final stopWatch = Stopwatch()..start();
   print('다운로드 시작');
-  final imageBytes = await downloadImage('https://naver.com/favicon.ico');
+  final imageBytes = await downloadImage('https://alimipro.com/favi111con.ico');
   print('다운로드 끝');
   final imageFile = await saveFile(imageBytes, 'favicon.ico');
   print('소요시간 : ${(stopWatch.elapsed.toString())}');
@@ -17,11 +17,18 @@ void main() async {
 
 Future<Uint8List> downloadImage(String url) async {
   try {
+    // final http.Client client = http.Client();
+    // final http.Response response = await client.head(Uri.parse(url));
+    // print(response.isRedirect);
+
     final response = await http.get(Uri.parse(url));
-    if (response.statusCode != 200) {
+    print(response.isRedirect);
+    print(response.headers);
+    if (response.statusCode != 200 || response.isRedirect) {
       print('statusCode : ${response.statusCode}');
       throw Exception('statusCode Error');
     }
+
     return response.bodyBytes;
   } catch (e) {
     print('Error : 잘못된 url 혹은 잘못된 응답값 입니다\n$e');
