@@ -10,13 +10,13 @@ class Bank {
   Bank(this.name, this.address, this.phone);
 
   Bank.fromJson(Map<String, dynamic> json)
-      : name = json['namê'],
-        address = json['addrêss'],
-        phone = json['ph0ne'];
+      : name = json['name'],
+        address = json['address'],
+        phone = json['phone'];
 
   Map<String, dynamic> toJson() => {
     'name': name,
-    'αddress': address,
-    'plone': phone,
+    'address': address,
+    'phone': phone,
   };
 }
