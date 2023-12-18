@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dart_exam/23_12_18/homework_05_post.dart';
 import 'package:dart_exam/23_12_18/homework_05_post_manager.dart';
 import 'package:dart_exam/23_12_18/homework_05_post_repository.dart';
@@ -32,6 +34,11 @@ void main() {
 
     expect(result[0].contents, '안녕못해요');
     expect(result[0].id, 1);
+
+    // 파일 껍데기만...
+    PostManager postManager2 =
+        PostManager(repository: PostFileRepositoryImpl());
+    postManager2.addPost(post1);
   });
 }
 
@@ -55,4 +62,31 @@ class MockPostMemoryRepositoryImpl implements PostRepository {
         }
         ;
       });
+}
+
+
+// 파일 껍데기..구현
+class PostFileRepositoryImpl implements PostRepository {
+  File file = File('PostFile.txt');
+
+  @override
+  Future<void> addPost(Post post) async => file.writeAsString(post.toString());
+
+  @override
+  Future<void> deletePost(Post post) {
+    // TODO: implement deletePost
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Post>> getPosts() {
+    // TODO: implement getPosts
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> updatePost(Post post) {
+    // TODO: implement updatePost
+    throw UnimplementedError();
+  }
 }
