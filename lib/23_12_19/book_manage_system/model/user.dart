@@ -1,7 +1,7 @@
 import 'book.dart';
 
 class User {
-  int userId;
+  String userId;
   String userName;
   Map<Book,DateTime> borrowedBooks = {};
 
@@ -9,4 +9,9 @@ class User {
     required this.userId,
     required this.userName,
   });
+
+  @override
+  String toString() {
+    return 'User{userId: $userId, userName: $userName}';
+  }
 }
