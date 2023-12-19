@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:dart_exam/23_12_19/book_manage_system/model/book.dart';
 import 'package:dart_exam/23_12_19/book_manage_system/model/library.dart';
-import 'package:dart_exam/23_12_19/book_manage_system/model/user.dart';
 import 'package:dart_exam/23_12_19/book_manage_system/repository/library_repository.dart';
 import 'package:dart_exam/23_12_19/book_manage_system/view_model/main_screen.dart';
+
+import 'model/user.dart';
 
 void main() {
   // Initianlizing Library
@@ -18,13 +19,10 @@ void main() {
   libraryRepository.addBook(Book(id: 4, title: '개발자 되는법'));
 
   // 유저 추가
-  libraryRepository.addUser(User(userId: 1, userName: 'karl'));
-  libraryRepository.addUser(User(userId: 2, userName: 'john'));
-  libraryRepository.addUser(User(userId: 3, userName: 'bella'));
-  libraryRepository.addUser(User(userId: 4, userName: 'tae'));
-
-
-
+  libraryRepository.addUser(User(userId: '1', userName: 'karl'));
+  libraryRepository.addUser(User(userId: '2', userName: 'john'));
+  libraryRepository.addUser(User(userId: '3', userName: 'bella'));
+  libraryRepository.addUser(User(userId: '4', userName: 'tae'));
 
   MainScreen(libraryRepository).mainScreen();
 
