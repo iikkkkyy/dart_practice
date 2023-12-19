@@ -24,6 +24,7 @@ void main() {
   libraryRepository.addUser(User(userId: '3', userName: 'bella'));
   libraryRepository.addUser(User(userId: '4', userName: 'tae'));
 
+  // 정석적으로 하면 다 돌아가지만 예외처리나 방어코딩 할게 수없이 많이남음...
   MainScreen(libraryRepository).mainScreen();
 
 }
