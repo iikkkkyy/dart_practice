@@ -3,7 +3,7 @@ import 'book.dart';
 class User {
   int userId;
   String userName;
-  List<Book> borrowedBooks = [];
+  Map<Book,DateTime> borrowedBooks = {};
 
   User({
     required this.userId,
