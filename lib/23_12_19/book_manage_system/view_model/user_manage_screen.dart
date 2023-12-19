@@ -38,13 +38,16 @@ class UserManagementViewModel {
     print('ex) 1234, 김강태');
     String? num = stdin.readLineSync();
     List<String>? numList = num?.split(',');
-    if(numList?.length != 2){
+    if (numList?.length != 2) {
       print('잘못된 형식입니다.');
       return addUser();
     } else {
       print('유저 추가 완료 : id : ${numList?[0]} name : ${numList?[1]}');
-      _libraryRepository.addUser(User(userId: numList![0], userName: numList[1]));
+      _libraryRepository
+          .addUser(User(userId: numList![0], userName: numList[1]));
       return userManagement();
     }
   }
+
+
 }
