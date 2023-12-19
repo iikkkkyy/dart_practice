@@ -12,6 +12,6 @@ class User {
 
   @override
   String toString() {
-    return 'User{userId: $userId, userName: $userName}\n';
+    return 'User{userId: $userId, userName: $userName, borrowedBooks: $borrowedBooks}\n';
   }
 }
