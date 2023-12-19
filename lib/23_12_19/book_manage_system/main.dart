@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dart_exam/23_12_19/book_manage_system/model/book.dart';
 import 'package:dart_exam/23_12_19/book_manage_system/model/library.dart';
 import 'package:dart_exam/23_12_19/book_manage_system/model/user.dart';
@@ -18,9 +20,20 @@ void main() {
   libraryRepository.addUser(User(userId: 1, userName: 'karl'));
   libraryRepository.addUser(User(userId: 2, userName: 'john'));
   libraryRepository.addUser(User(userId: 3, userName: 'bella'));
-  libraryRepository.addUser(User(userId: 4, userName: 'kimkangtae'));
+  libraryRepository.addUser(User(userId: 4, userName: 'tae'));
 
-  print(libraryRepository.getBooks().map((e) => e.title));
-  print(libraryRepository.getUsers().map((e) => e.userName));
+  print('1.회원관리 2.도서관리 3.종료');
+  String? num = stdin.readLineSync();
+  switch (num) {
+    case '1':
+      print(libraryRepository.getUsers().map((e) => e.userName));
+      break;
+    case '2':
+      print(libraryRepository.getBooks().map((e) => e.title));
+      break;
+    default:
+      print('시스템 off');
+      break;
+  }
 
 }
