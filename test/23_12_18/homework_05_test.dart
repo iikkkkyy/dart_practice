@@ -67,26 +67,24 @@ class MockPostMemoryRepositoryImpl implements PostRepository {
 
 // 파일 껍데기..구현
 class PostFileRepositoryImpl implements PostRepository {
-  File file = File('PostFile.txt');
+  File _file = File('PostFile.txt');
 
   @override
-  Future<void> addPost(Post post) async => file.writeAsString(post.toString());
+  Future<void> addPost(Post post) async {
+  }
 
   @override
   Future<void> deletePost(Post post) {
-    // TODO: implement deletePost
     throw UnimplementedError();
   }
 
   @override
   Future<List<Post>> getPosts() {
-    // TODO: implement getPosts
     throw UnimplementedError();
   }
 
   @override
   Future<void> updatePost(Post post) {
-    // TODO: implement updatePost
     throw UnimplementedError();
   }
 }
